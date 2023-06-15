@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background-color: #f0ffff;
+    font-family: 'Press Start 2P', cursive; 
+}
+
+.grid {
+    display: grid;
+    width: 100%;
+    max-width: 600px;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.card {
+    aspect-ratio: 3/4;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    transition: all 400ms ease;
+    transform-style: preserve-3d;
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    border: 2px solid #39813a;
+    transition: all 500ms ease;
+}
+
+.front {
+    transform: rotateY(180deg);
+}
+
+.back {
+    background-image: url('../images/back.png');
+    backface-visibility: hidden;
+}
+
+.reveal-card {
+    transform: rotateY(180deg);
+}
+
+.disabled-card {
+    filter: saturate(0);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px 0;
+    margin: 0 0 20px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    font-size: 1.2em;
+}
+
+.statistics {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 13px;
+}
